@@ -13,7 +13,9 @@ export class ShowComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.products = this.productService.products;
+    this.productService.getAll().subscribe(data=>{
+      this.products = data;
+    });
   }
 
 
